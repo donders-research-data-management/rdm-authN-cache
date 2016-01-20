@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+version="2.4">
+
+    <servlet>
+        <servlet-name>JCSRemoteCacheStartupServlet</servlet-name>
+        <servlet-class>
+             org.apache.commons.jcs.auxiliary.remote.server.RemoteCacheStartupServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JCSRemoteCacheStartupServlet</servlet-name>
+        <url-pattern>/jcs</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>JCSAdminServlet</servlet-name>
+        <servlet-class>
+             org.apache.commons.jcs.admin.servlet.JCSAdminServlet 
+        </servlet-class>
+        <init-param>
+            <param-name>properties</param-name>
+            <param-value>WEB-INF/velocity.properties</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JCSAdminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>admin</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
