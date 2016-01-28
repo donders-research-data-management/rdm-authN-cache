@@ -12,7 +12,7 @@ The missing piece of configuring `JCSAdminServlet` in terms of [Velocity Templat
 Clone the source code from GitHub.
 
 ```bash
-$ git clone ...
+$ git clone https://github.com/donders-research-data-management/rdm-authN-cache.git
 $ cd rdm-authN-cache
 ```
 
