@@ -49,7 +49,7 @@ If you see the same output, it implies the JCS cache server is available. Type `
 
 ## Management portal
 
-The webapp provides a simple interface to manage cached objects (i.e. the authenticated IRODSAccount) on the JCS server.  Assuming you are running the webapp on localhost, the URL to the interface would be: http://localhost/rdm-authN-cache
+The webapp provides a simple interface to manage cached objects (i.e. the authenticated IRODSAccount) on the JCS server.  Assuming you are running the webapp on `localhost`, the URL to the interface would be: [http://localhost/rdm-authN-cache](http://localhost/rdm-authN-cache)
 
 ## Known issues
 
