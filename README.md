@@ -53,5 +53,7 @@ The webapp provides a simple interface to manage cached objects (i.e. the authen
 
 ## Known issues
 
-1. It seems that the JCS remote server prevents Tomcat to be shutted down properly.  After running the `shutdown.sh` script of Tomcat, the JVM process of Tomcat is not killed.  For the moment, one should kill the JVM process manually before restarting the Tomcat. 
+1. It seems that the JCS remote server prevents Tomcat to be shutted down properly.  After running the `shutdown.sh` script of Tomcat, the JVM process of Tomcat is not killed.  For the moment, one should kill the JVM process manually before restarting the Tomcat.
+
+2. For some reason, the JAVA RMI library tends to resolve server host into IPV6 address. This can cause `java.net.UnknownHostException` when starting up the JCS webapp. When it happens, add to the environment variable `JAVA_OPTS` of tomcat with `-Djava.net.preferIPv4Stack=true`.
 
