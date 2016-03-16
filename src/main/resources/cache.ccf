@@ -5,7 +5,7 @@ remote.cache.service.port=1101
 remote.cluster.LocalClusterConsistency=true
 
 # default, memory + disk cache
-jcs.default=DC
+jcs.default=memory
 jcs.default.cacheattributes=org.apache.commons.jcs.engine.CompositeCacheAttributes
 jcs.default.cacheattributes.MaxObjects=10000
 jcs.default.cacheattributes.MemoryCacheName=org.apache.commons.jcs.engine.memory.lru.LRUMemoryCache
