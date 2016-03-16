@@ -23,6 +23,7 @@
 		<jargon.version>4.0.2.4-RELEASE</jargon.version>
 		<log4j.version>1.2.17</log4j.version>
 		<sl4j.version>1.6.6</sl4j.version>
+		<nl.ru.test-categories.version>1.1.0</nl.ru.test-categories.version>
 	</properties>
 	<repositories>
         <repository>
@@ -85,10 +86,17 @@
 				</exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>nl.ru</groupId>
+            <artifactId>test-categories</artifactId>
+            <version>${nl.ru.test-categories.version}</version>
+            <scope>test</scope>
+        </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- <dependency>
 			<groupId>log4j</groupId>

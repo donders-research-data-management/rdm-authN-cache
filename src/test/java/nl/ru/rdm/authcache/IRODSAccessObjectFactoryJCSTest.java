@@ -7,6 +7,7 @@ import org.irods.jargon.core.connection.IRODSSimpleProtocolManager;
 import org.irods.jargon.core.connection.auth.AuthResponse;
 import org.irods.jargon.core.pub.IRODSAccessObjectFactory;
 import org.junit.Test;
+import org.junit.Before;
 
 import static org.junit.Assert.*;
 
@@ -15,11 +16,17 @@ import static org.junit.Assert.*;
  */
 public class IRODSAccessObjectFactoryJCSTest {
 
+    private String userName;
+    private String userHOTP;
+
+    @Before
+    public void initialize() {
+        userName = System.getProperty("rdm.irods.username");
+        userHOTP = System.getProperty("rdm.irods.userhotp");
+    }
+
     @Test
     public void testAuthenticateIRODSAccount() throws Exception {
-
-        System.setProperty("javax.net.ssl.trustStore","/home/hclee/.keystore");
-        System.setProperty("javax.net.ssl.trustStorePassword","leeh6430");
 
         // initialising IRODS session
         IRODSSession irodsSession = IRODSSession.instance(IRODSSimpleProtocolManager.instance());
@@ -28,7 +35,7 @@ public class IRODSAccessObjectFactoryJCSTest {
         IRODSAccessObjectFactory factory = IRODSAccessObjectFactoryJCS.instance(irodsSession);
 
         // creating IRODSAccount for authentication
-        IRODSAccount irodsAccount = IRODSAccount.instance("irods-icat.uci.ru.nl", 1247, "U505173-ru.nl", "061373",
+        IRODSAccount irodsAccount = IRODSAccount.instance("irods-icat.uci.ru.nl", 1247, userName, userHOTP,
                 "/rdmtst/di", "rdmtst", "demoResc", AuthScheme.PAM);
 
         // authenticating IRODSAccount and checking the user name of the authenticated IRODSAccount

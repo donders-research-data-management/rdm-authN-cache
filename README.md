@@ -26,6 +26,14 @@ $ mvn package -e -Dmaven.test.skip=true
 
 Upon success, the application `war` file ready for deployment can be found as `target/rdm-authN-cache.war`.
 
+## Testing the package
+
+```bash
+$ mvn  -Drdm.irods.username=U505173-ru.nl -Drdm.irods.userhotp=123456 test
+```
+
+where the value of `rdm.irods.userhotp` should be replaced by a proper one-time password.
+
 ## Deployment (to Tomcat)
 
 Simply copy the application `war` into the `webapps` directory of the Tomcat.  For example,
