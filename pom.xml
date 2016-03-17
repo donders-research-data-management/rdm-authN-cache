@@ -10,11 +10,11 @@
 	</parent>
 
 	<groupId>nl.ru.rdm</groupId>
-	<artifactId>rdm-authN-cache</artifactId>
+	<artifactId>rdm-authcache-manager</artifactId>
 	<version>0.0.2</version>
-	<name>rdm-authN-cache</name>
+	<name>rdm-authcache-manager</name>
 	<packaging>war</packaging>
-	<description>RDM service and library for caching and managing authenticated IRODSAccount Jargon object</description>
+	<description>RDM webapp for managing authenticated IRODSAccount Jargon object</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
