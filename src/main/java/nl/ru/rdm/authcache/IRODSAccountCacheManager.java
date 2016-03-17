@@ -24,7 +24,7 @@ public class IRODSAccountCacheManager {
         try {
             irodsAccountCache = JCS.getInstance("irods_account");
         } catch (Exception e) {
-            throw new IRODSAccountCacheManagerError("cache initialization failed.", e);
+            throw new IRODSAccountCacheManagerError("irods_account cache initialization failed.", e);
         }
     }
 
@@ -47,20 +47,25 @@ public class IRODSAccountCacheManager {
 
     public IRODSAccount getIRODSAccount(String authId)
         throws IRODSAccountCacheManagerError {
+        log.debug("retrieving iRODS account cached for authId: {}", authId);
         return irodsAccountCache.get(authId);
     }
 
     public IRODSAccount putIRODSAccount(String username, String password, IRODSAccount account)
         throws IRODSAccountCacheManagerError {
 
+        String authId;
+
         try {
-            irodsAccountCache.put(getAuthId(username,password), account);
+            authId = getAuthId(username,password);
+            log.debug("caching irods account for authId: {}", authId);
+            irodsAccountCache.put(authId, account);
         } catch (Exception e) {
             throw new IRODSAccountCacheManagerError("cache put failed.", e);
         }
 
         // return account from cache
-        return getIRODSAccount(username, password);
+        return getIRODSAccount(authId);
     }
 
     public static String getAuthId(String username, String password)
@@ -73,9 +78,8 @@ public class IRODSAccountCacheManager {
             String data = username + ":" + password;
             md.update(data.getBytes("UTF-8"));
             authId = username + ":" + new BigInteger(1, md.digest()).toString(16);
-            log.debug("cache authId: {}", authId);
         } catch (Exception e) {
-            throw new IRODSAccountCacheManagerError("cache authId generation failed.", e);
+            throw new IRODSAccountCacheManagerError("authId generation failed.", e);
         }
 
         return authId;
