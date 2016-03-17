@@ -58,8 +58,8 @@ public class IRODSAccountCacheManager {
 
         try {
             authId = getAuthId(username,password);
-            log.debug("caching irods account for authId: {}", authId);
             irodsAccountCache.put(authId, account);
+            log.debug("irods account cached for authId: {}", authId);
         } catch (Exception e) {
             throw new IRODSAccountCacheManagerError("cache put failed.", e);
         }
