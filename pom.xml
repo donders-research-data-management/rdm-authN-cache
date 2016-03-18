@@ -11,7 +11,7 @@
 
 	<groupId>nl.ru.rdm</groupId>
 	<artifactId>rdm-authcache-manager</artifactId>
-	<version>0.0.2</version>
+	<version>0.3</version>
 	<name>rdm-authcache-manager</name>
 	<packaging>war</packaging>
 	<description>RDM webapp for managing authenticated IRODSAccount Jargon object</description>
