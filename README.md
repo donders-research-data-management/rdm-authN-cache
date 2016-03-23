@@ -12,8 +12,8 @@ The missing piece of configuring `JCSAdminServlet` in terms of [Velocity Templat
 Clone the source code from GitHub.
 
 ```bash
-$ git clone https://github.com/donders-research-data-management/rdm-authN-cache.git
-$ cd rdm-authN-cache
+$ git clone https://github.com/donders-research-data-management/rdm-authcache-manager.git
+$ cd rdm-authcache-manager
 ```
 
 Configure the JCS cache behavior in the file `src/main/resources/cache.ccf`, please refer to [JCS documentation](https://commons.apache.org/proper/commons-jcs/getting_started/intro.html) for the detail of the configuration parameters. 
@@ -24,14 +24,14 @@ Build the `war` file requires Maven.
 $ mvn package -e -Dmaven.test.skip=true
 ```
 
-Upon success, the application `war` file ready for deployment can be found as `target/rdm-authN-cache.war`.
+Upon success, the application `war` file ready for deployment can be found as `target/rdm-authcache-manager.war`.
 
 ## Deployment (to Tomcat)
 
 Simply copy the application `war` into the `webapps` directory of the Tomcat.  For example,
 
 ```bash
-$ sudo cp target/rdm-authN-cache.war /opt/tomcat/webapps
+$ sudo cp target/rdm-authcache-manager.war /opt/tomcat/webapps
 ```
 
 ## Test JCS remote cache server
@@ -49,7 +49,7 @@ If you see the same output, it implies the JCS cache server is available. Type `
 
 ## Management portal
 
-The webapp provides a simple interface to manage cached objects (i.e. the authenticated IRODSAccount) on the JCS server.  Assuming you are running the webapp on `localhost`, the URL to the interface would be: [http://localhost/rdm-authN-cache](http://localhost/rdm-authN-cache)
+The webapp provides a simple interface to manage cached objects (i.e. the authenticated `IRODSAccount`) on the JCS server.  Assuming you are running the webapp on `localhost`, the URL to the interface would be: [http://localhost/rdm-authN-cache](http://localhost/rdm-authcache-manager)
 
 ## Known issues
 
