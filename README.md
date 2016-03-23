@@ -18,7 +18,7 @@ $ cd rdm-authcache-manager
 
 Configure the JCS cache behavior in the file `src/main/resources/cache.ccf`, please refer to [JCS documentation](https://commons.apache.org/proper/commons-jcs/getting_started/intro.html) for the detail of the configuration parameters. 
 
-Build the `war` file requires Maven.
+Build the `war` file with Maven.
 
 ```bash
 $ mvn package -e -Dmaven.test.skip=true
