@@ -10,11 +10,11 @@ jcs.default.cacheattributes=org.apache.commons.jcs.engine.CompositeCacheAttribut
 jcs.default.cacheattributes.MaxObjects=10000
 jcs.default.cacheattributes.MemoryCacheName=org.apache.commons.jcs.engine.memory.lru.LRUMemoryCache
 jcs.default.cacheattributes.UseMemoryShrinker=true
-jcs.default.cacheattributes.MaxMemoryIdleTimeSeconds=3600
+jcs.default.cacheattributes.MaxMemoryIdleTimeSeconds=7200
 jcs.default.cacheattributes.ShrinkerIntervalSeconds=60
 jcs.default.elementattributes=org.apache.commons.jcs.engine.ElementAttributes
-jcs.default.elementattributes.MaxLife=7200
-jcs.default.elementattributes.IdleTime=1800
+jcs.default.elementattributes.MaxLife=9600
+jcs.default.elementattributes.IdleTime=7200
 
 # REGION irods_account, pure memory cache
 jcs.region.irods_account=
